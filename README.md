@@ -71,16 +71,6 @@ this number should be as close to 100% as possible.
 It is ideal to have more killed mutants than survived ones, as this demonstrates that the testing suite is catching the mutations and proving its effectiveness. However, incompetent demonstrates that there are either not enough tests or that the tests that exist are too poorly written to properly employ the mutation operators
 against the test suite. 
 
-```
-[*] Mutation score [11.53777 s]: 56.5%
-   - all: 89
-   - killed: 26 (29.2%)
-   - survived: 20 (22.5%)
-   - incompetent: 43 (48.3%)
-   - timeout: 0 (0.0%)
-```
-
-
 
 ## Recommendations for Improving the Test Suite
 
