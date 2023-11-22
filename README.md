@@ -12,47 +12,46 @@ The operators outlined in this section are run by mutpy using the command below:
 mut.py --target Polynomial.py --unit-test PolyTest.py -m --runner pytest
 ```
 
-    Arithmetic Operator Replacement:
-        Replaces arithmetic operators such as +, -, *, /, etc., with their counterparts to assess the resilience of the test suite to changes in arithmetic operations.
+Arithmetic Operator Replacement:
+- Replaces arithmetic operators such as +, -, *, /, etc., with their counterparts to assess the resilience of the test suite to changes in arithmetic operations.
 
-    Comparison Operator Replacement:
-        Modifies comparison operators such as <, <=, >, >=, ==, != to evaluate how well the test suite can identify changes in conditional statements.
+Comparison Operator Replacement:
+- Modifies comparison operators such as <, <=, >, >=, ==, != to evaluate how well the test suite can identify changes in conditional statements.
 
-    Logical Connector Replacement:
-        Alters logical connectors such as and, or, and not to check the effectiveness of the test suite in handling changes in logical conditions.
+Logical Connector Replacement:
+- Alters logical connectors such as and, or, and not to check the effectiveness of the test suite in handling changes in logical conditions.
 
-    Assignment Operator Replacement:
-        Changes assignment operators like =, +=, -=, etc., to assess the impact on variable assignments.
+Assignment Operator Replacement:
+- Changes assignment operators like =, +=, -=, etc., to assess the impact on variable assignments.
 
-    Unary Operator Replacement:
-        Modifies unary operators such as +, -, ~ to check if the test suite can identify changes in unary expressions.
+Unary Operator Replacement:
+- Modifies unary operators such as +, -, ~ to check if the test suite can identify changes in unary expressions.
 
-    Statement Deletion:
-        Deletes statements to evaluate how well the test suite can detect missing or deleted code.
+Statement Deletion:
+- Deletes statements to evaluate how well the test suite can detect missing or deleted code.
 
-    Return Value Replacement:
-        Alters return values to assess the ability of the test suite to identify changes in function return values.
+Return Value Replacement:
+- Alters return values to assess the ability of the test suite to identify changes in function return values.
 
-    Break/Continue Replacement:
-        Replaces break and continue statements to evaluate the impact on loop control flow.
+Break/Continue Replacement:
+- Replaces break and continue statements to evaluate the impact on loop control flow.
 
-    Decorator Removal:
-        Removes decorators to check if the test suite can detect changes in the application of decorators.
+Decorator Removal:
+- Removes decorators to check if the test suite can detect changes in the application of decorators.
 
-    Exception Handling Modification:
-        Modifies exception handling statements to assess how well the test suite can identify changes in error-handling logic.
+Exception Handling Modification:
+- Modifies exception handling statements to assess how well the test suite can identify changes in error-handling logic.
 
 
 
 ## Summarize Surviving and Killing 
 
 After applying the mutation operators to the Polynomial class, the MutPy framework was used to run the test suite against the mutants. The results are summarized as follows:
+- Survived Mutants: Mutants that the test suite did not detect. These indicate potential weaknesses in the test suite.
+- Killed Mutants: Mutants that the test suite successfully identified. These demonstrate the effectiveness of the test suite in detecting changes.
+- Incompetent: Indicates that the test suite does not allow for mutant operators to work effectively. Generally, this means that the existing tests do not provide enough coverage for mutant operators to be functional. 
 
-    Survived Mutants: Mutants that the test suite did not detect. These indicate potential weaknesses in the test suite.
-    Killed Mutants: Mutants that the test suite successfully identified. These demonstrate the effectiveness of the test suite in detecting changes.
-    Incompetent: Indicates that the test suite does not allow for mutant operators to work effectively. Generally, this means that the existing tests do not provide enough coverage for mutant operators to be functional. 
-
-* The initial results: *
+ __The initial results:__
 
 ```
 [*] Mutation score [10.27966 s]: 54.3%
@@ -63,11 +62,12 @@ After applying the mutation operators to the Polynomial class, the MutPy framewo
    - timeout: 0 (0.0%)
 ```
 ## Analysis of Test Suite Effectiveness 
-    Overall, the test suite received a mutation score of 54.3%, but in order to demonstrate a robust and effective testing suite, 
-    this number should be as close to 100% as possible. 
 
-    It is ideal to have more killed mutants than survived ones, as this demonstrates that the testing suite is catching the mutations and proving its effectiveness. However, incompetent demonstrates that there are either not enough tests or that the tests that exist are too poorly written to properly employ the mutation operators
-    against the test suite. 
+Overall, the test suite received a mutation score of 54.3%, but in order to demonstrate a robust and effective testing suite, 
+this number should be as close to 100% as possible. 
+
+It is ideal to have more killed mutants than survived ones, as this demonstrates that the testing suite is catching the mutations and proving its effectiveness. However, incompetent demonstrates that there are either not enough tests or that the tests that exist are too poorly written to properly employ the mutation operators
+against the test suite. 
 
 ```
 [*] Mutation score [11.53777 s]: 56.5%
@@ -82,12 +82,15 @@ After applying the mutation operators to the Polynomial class, the MutPy framewo
 
 ## Recommendations for Improving the Test Suite
 
-    Enhance Coefficient Checking: Strengthen tests related to polynomial coefficients to better detect changes in coefficient values.
-    Diversify Test Cases: Introduce test cases that cover a broader range of scenarios, including edge cases and different polynomial degrees.
-    Improve Arithmetic Operation Tests: Ensure thorough testing of arithmetic operations, considering various combinations of positive and negative coefficients.
+- Enhance Coefficient Checking: Strengthen tests related to polynomial coefficients to better detect changes in coefficient values.
 
-    Below are tests that were added to demonstrate minor modifications of the test suite. These are tests for evaluate() and get_derivative_coefficients() 
-    from the Polynomial class, which did not have unit tests prior to the additions shown below. 
+- Diversify Test Cases: Introduce test cases that cover a broader range of scenarios, including edge cases and different polynomial degrees.
+    
+- Improve Arithmetic Operation Tests: Ensure thorough testing of arithmetic operations, considering various combinations of positive and negative coefficients.
+
+
+Below are tests that were added to demonstrate minor modifications of the test suite. These are tests for evaluate() and get_derivative_coefficients() 
+from the Polynomial class, which did not have unit tests prior to the additions shown below. 
 
  ```
 def test_evaluate(): 
@@ -117,5 +120,8 @@ def test_derivative_coefficient():
 
 ## Conclusion: 
 
-Mutation testing using MutPy provides valuable insights into the effectiveness of the test suite for the Polynomial class. By identifying areas of strength and weakness, this analysis guides improvements to enhance the overall reliability of the test suite, contributing to the robustness of the Polynomial class implementation. Continuous refinement of the test suite based on mutation testing results is essential for maintaining a high level of code quality and reliability.
+Mutation testing using MutPy provides valuable insights into the effectiveness of the test suite for the Polynomial class.
+By identifying areas of strength and weakness, this analysis guides improvements to enhance the overall reliability of the test suite, 
+contributing to the robustness of the Polynomial class implementation. Continuous refinement of the test suite based on mutation testing 
+results is essential for maintaining a high level of code quality and reliability.
 
