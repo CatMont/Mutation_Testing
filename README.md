@@ -48,8 +48,10 @@ Exception Handling Modification:
 
 After applying the mutation operators to the Polynomial class, the MutPy framework was used to run the test suite against the mutants. The results are summarized as follows:
 - Survived Mutants: Mutants that the test suite did not detect. These indicate potential weaknesses in the test suite.
+
 - Killed Mutants: Mutants that the test suite successfully identified. These demonstrate the effectiveness of the test suite in detecting changes.
-- Incompetent: Indicates that the test suite does not allow for mutant operators to work effectively. Generally, this means that the existing tests do not provide enough coverage for mutant operators to be functional. 
+
+- Incompetent Tests: Tests marked as incompetent indicate situations where the test suite executed the test but failed to detect a specific mutation. These instances point towards potential shortcomings in the test suite's ability to identify certain types of code changes.
 
  __The initial results:__
 
@@ -104,8 +106,7 @@ def test_derivative_coefficient():
     assert result == [0]
  ```
 
- By adding these tests, more mutations can be killed. 
- By running the mutpy command referenced earlier in this report again, these results are obtained: 
+By adding these tests, more mutations can be killed. Rerunning MutPy with the updated tests yields:
 
  
  ```
@@ -120,8 +121,6 @@ def test_derivative_coefficient():
 
 ## Conclusion: 
 
-Mutation testing using MutPy provides valuable insights into the effectiveness of the test suite for the Polynomial class.
+Mutation testing using MutPy provides valuable insights into the effectiveness of the test suite for the Polynomial class. 
 By identifying areas of strength and weakness, this analysis guides improvements to enhance the overall reliability of the test suite, 
-contributing to the robustness of the Polynomial class implementation. Continuous refinement of the test suite based on mutation testing 
-results is essential for maintaining a high level of code quality and reliability.
-
+contributing to the robustness of the Polynomial class implementation. Continuous refinement of the test suite based on mutation testing results is essential for maintaining a high level of code quality and reliability.
