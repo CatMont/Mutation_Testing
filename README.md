@@ -44,7 +44,7 @@ Exception Handling Modification:
 
 
 
-## Summarize Surviving and Killing 
+## Summarize Mutant Surviving and Killing 
 
 After applying the mutation operators to the Polynomial class, the MutPy framework was used to run the test suite against the mutants. The results are summarized as follows:
 - Survived Mutants: Mutants that the test suite did not detect. These indicate potential weaknesses in the test suite.
