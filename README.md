@@ -92,7 +92,7 @@ against the test suite.
 
 
 Below are tests that were added to demonstrate minor modifications of the test suite. These are tests for evaluate() and get_derivative_coefficients() 
-from the Polynomial class, which did not have unit tests prior to the additions shown below. 
+from the Polynomial class, which did not have unit tests prior to these additions:  
 
  ```
 def test_evaluate(): 
